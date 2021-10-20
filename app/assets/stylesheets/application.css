@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+.page-link {
+  color: #198754 !important;
+}
+
+.page-item.active .page-link {
+  background: #198754 !important;
+  color: white !important;
+}
