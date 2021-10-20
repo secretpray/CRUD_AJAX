@@ -12,10 +12,14 @@
   </head>
 
   <body class='d-flex flex-column h-100'>
-    <%= render 'shared/navbar' %>
+    <% unless controller_name == 'home' && action_name == 'index' %>
+      <%= render 'shared/navbar'%>
+    <% end %>
       <main style='min-height: calc(100vh - 112px)'>
         <%= yield %>
       </main>
-    <%= render 'shared/footer' %>
+    <% unless controller_name == 'home' && action_name == 'index' %>
+      <%= render 'shared/footer' %>
+    <% end %>
   </body>
 </html>

@@ -1,0 +1,5 @@
+var newUserForm = {}
+newUserForm = document.getElementById('newUserForm')
+
+newUserForm.innerHTML = ''
+newUserForm.insertAdjacentHTML('beforeend', '<%= j render 'users/form', user: @user %>')

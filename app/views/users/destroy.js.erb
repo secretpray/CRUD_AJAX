@@ -1,0 +1,10 @@
+if(document.getElementById('user_<%= @user.id %>')) {
+  document.getElementById('user_<%= @user.id %>').remove()
+}
+
+// renumarate id (reason -> 'afterbegin')
+var listTD = {}
+listTD = document.querySelectorAll('.index-td')
+for (const [i, value] of listTD.entries()) {
+  value.innerText = +i + 1
+}

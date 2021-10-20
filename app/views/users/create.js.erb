@@ -1,0 +1,17 @@
+var errorsSection = {}
+errorsSection = document.querySelector('.errors-section')
+
+if(errorsSection) { errorsSection.innerHTML = '' }
+
+<% if @user.errors.any? %>
+  errorsSection.insertAdjacentHTML('beforeend', "<%= j render 'shared/errors', user: @user %>")
+<% else %>
+  document.getElementById('table-body').insertAdjacentHTML('afterbegin', "<%= j render 'table_row', user: @user, index: @index %>")
+  // renumarate id (reason -> 'afterbegin')
+  var listTD = {}
+  listTD = document.querySelectorAll('.index-td')
+  for (const [i, value] of listTD.entries()) {
+    value.innerText = +i + 1
+  }
+  document.querySelector('.close-create').click()
+<% end %>

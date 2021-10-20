@@ -1,0 +1,23 @@
+<tr id=<%= dom_id(user) %> >
+  <td class='index-td'><%= index %></td>
+  <td><%= user.name %></td>
+  <td><%= user.email %></td>
+  <td><%= user.address %></td>
+  <td><%= user.contact %></td>
+  <td class='px-4 align-middle'>
+    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownActions" data-bs-toggle="dropdown" aria-expanded="false">
+      &nbsp;Select
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownActions">
+      <li>
+        <%= link_to 'Show', user, class: "dropdown-item" %>
+      </li>
+      <li>
+        <%= link_to 'Edit', edit_user_path(user), class: "dropdown-item", data: { bs_toggle: 'modal', bs_target: '#editUserModal', remote: true } %>
+      </li>
+      <li>
+        <%= link_to 'Destroy', user, class: "dropdown-item", method: :delete, data: { confirm: 'Are you sure?', remote: true } %>
+      </li>
+    </ul>
+  </td>
+</tr>
