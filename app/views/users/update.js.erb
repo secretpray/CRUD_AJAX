@@ -1,0 +1,11 @@
+var errorsSection = {}
+errorsSection = document.querySelector('.errors-section')
+
+if(errorsSection) { errorsSection.innerHTML = '' }
+
+<% if @user.errors.any? %>
+  errorsSection.insertAdjacentHTML('beforeend', "<%= j render 'shared/errors', user: @user %>")
+<% else %>
+  document.getElementById('user_<%= @user.id %>').innerHTML = "<%= j render 'table_row', user: @user, index: @index %>"
+  document.querySelector('.close-edit').click()
+<% end %>

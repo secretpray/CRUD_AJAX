@@ -1,43 +1,38 @@
 <div class="mx-auto">
-  <%= form_with(model: user) do |form| %>
-    <% if user.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-        <ul>
-          <% user.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
+  <%= form_with(model: user, local: false) do |form| %>
+    <div class="modal-body">
+      <div class="errors-section">
+        <%= render 'shared/errors', user: @user %>
       </div>
-    <% end %>
 
-    <div class="">
-      <%= form.label :name, class: "form-label" %>
-      <%= form.text_field :name, class: 'form-control' %>
+      <div class="mb-2">
+        <%= form.label :name, class: "form-label" %>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :email, class: "form-label" %>
+        <%= form.text_field :email, class: 'form-control' %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :address, class: "form-label" %>
+        <%= form.text_field :address, class: 'form-control' %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :contact, class: "form-label" %>
+        <%= form.text_field :contact, class: 'form-control' %>
+      </div>
+
     </div>
-
-    <div class="mb-3">
-      <%= form.label :email, class: "form-label" %>
-      <%= form.text_field :email, class: 'form-control' %>
-    </div>
-
-    <div class="mb-3">
-      <%= form.label :address, class: "form-label" %>
-      <%= form.text_field :address, class: 'form-control' %>
-    </div>
-
-    <div class="mb-3">
-      <%= form.label :contact, class: "form-label" %>
-      <%= form.text_field :contact, class: 'form-control' %>
-    </div>
-
-    <div class="actions mt-4">
+    <div class="mt-1 modal-footer">
       <%= form.submit class: 'btn btn-success' %>
       <% unless user.new_record? %>
-        <%= link_to 'Show', @user, class: 'btn btn-outline-success' %>
+      <%#= link_to 'Show', @user, class: 'btn btn-outline-success' %>
       <% end %>
-      <%= link_to 'Back', users_path, class: 'btn btn-outline-secondary' %>
+      <%#= link_to 'Back', users_path, class: 'btn btn-outline-secondary' %>
+      <%= link_to 'Close', users_path, class: 'btn btn-outline-secondary', data: { bs_dismiss: "modal" } %>
     </div>
-  <% end %>
+    <% end %>
 </div>

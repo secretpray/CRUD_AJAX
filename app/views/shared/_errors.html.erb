@@ -1,0 +1,11 @@
+<% if user.errors.any? %>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong><%= pluralize(user.errors.count, "error") %> </strong> prohibited this user from being saved:
+  <ul>
+    <% user.errors.each do |error| %>
+    <li style='list-style: auto;'><%= error.full_message %></li>
+    <% end %>
+  </ul>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<% end %>
