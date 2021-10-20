@@ -26,7 +26,6 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    binding.pry
     @pagy, @users = pagy(User.recent, items: 10) # make new pagination
   end
 
