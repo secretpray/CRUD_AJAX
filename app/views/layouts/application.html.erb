@@ -11,7 +11,11 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class='d-flex flex-column h-100'>
+    <%= render 'shared/navbar' %>
+      <main style='min-height: calc(100vh - 112px)'>
+        <%= yield %>
+      </main>
+    <%= render 'shared/footer' %>
   </body>
 </html>

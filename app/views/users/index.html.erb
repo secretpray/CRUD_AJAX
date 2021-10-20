@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <p id="notice"><%= notice %></p>
+
+    <h1>Users</h1>
+
+    <table class='table table-striped'>
+      <thead class='table-success'>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Contact</th>
+          <th class='text-center' >Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @users.each.with_index(1) do |user, index| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.address %></td>
+          <td><%= user.contact %></td>
+          <td class='px-4 align-middle'>
+            <button class="btn btn-sm <%= index.even? ? 'btn-light' : 'bg-white' %> dropdown-toggle" type="button" id="dropdownActions" data-bs-toggle="dropdown" aria-expanded="false">
+              &nbsp;Select
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownActions">
+              <li>
+                <%= link_to 'Show', user, class: "dropdown-item" %>
+              </li>
+              <li>
+                <%= link_to 'Edit', edit_user_path(user), class: "dropdown-item" %>
+              </li>
+              <li>
+                <%= link_to 'Destroy', user, class: "dropdown-item", method: :delete, data: { confirm: 'Are you sure?' } %>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

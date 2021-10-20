@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="row col-md-8 mx-auto">
+    <div id="notice"><%= notice %></div>
+
+    <div class='mt-3'>
+      <strong>Name:</strong>
+      <%= @user.name %>
+    </div>
+
+    <div class='mt-3'>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </div>
+
+    <div class='mt-3'>
+      <strong>Address:</strong>
+      <%= @user.address %>
+    </div>
+
+    <div class='mt-3'>
+      <strong>Contact:</strong>
+      <%= @user.contact %>
+    </div>
+
+    <div class="actions mt-4">
+      <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-outline-success' %>
+      <%= link_to 'Back', users_path, class: 'btn btn-outline-secondary' %>
+    </div>
+  </div>
+</div>
