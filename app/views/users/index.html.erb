@@ -30,6 +30,11 @@
       </tbody>
     </table>
   </div>
+
+  <div class='d-flex justify-content-center pagination-link'>
+    <%== render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} %>
+    <%#== pagy_bootstrap_nav(@pagy).html_safe %>
+  </div>
 </div>
 
 <!-- User create modal (title only, body and button in _form) -->

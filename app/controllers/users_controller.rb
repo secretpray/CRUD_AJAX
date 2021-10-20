@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
 
   def index
-    @users = User.recent
+    @pagy, @users = pagy(User.recent, items: 10)
   end
 
   def show; end
@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.save
     @index = User.count # (for use as index number in table Users)
+    @pagy, @users = pagy(User.recent, items: 10) # make new pagination
   end
 
   def update
@@ -25,6 +26,8 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
+    binding.pry
+    @pagy, @users = pagy(User.recent, items: 10) # make new pagination
   end
 
   private

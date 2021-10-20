@@ -13,5 +13,12 @@ if(errorsSection) { errorsSection.innerHTML = '' }
   for (const [i, value] of listTD.entries()) {
     value.innerText = +i + 1
   }
+
+  // create new pagination (TODO remake with JS)
+  var pagySection = {}
+  pagySection = document.querySelector('.pagination-link')
+  pagySection.innerHTML = "<%== j render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} %>"
+
+  // close Modal
   document.querySelector('.close-create').click()
 <% end %>
