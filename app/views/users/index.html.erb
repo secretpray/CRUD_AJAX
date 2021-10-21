@@ -42,6 +42,9 @@
         <h5 class="modal-title" id="newUserModalLabel">Add user</h5>
         <button type="button" class="btn-close close-create" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div class="errors-create-section p-2">
+        <%= render 'shared/errors', user: @user %>
+      </div>
       <div id="newUserForm">
         <!-- insert by JS body and button form -->
       </div>
@@ -54,11 +57,27 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="editUserModalLabel">Add user</h5>
+        <h5 class="modal-title" id="editUserModalLabel">Edit user</h5>
         <button type="button" class="btn-close close-edit" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="errors-update-section p-2">
+        <%= render 'shared/errors', user: @user %>
       </div>
       <div id="editUserForm">
         <!-- insert by JS body and button form -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="showUserModal" tabindex="-1" aria-labelledby="showUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="showUserModalLabel">User Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="showUserDetails">
       </div>
     </div>
   </div>

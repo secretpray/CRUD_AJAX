@@ -1,5 +1,3 @@
-var newUserForm = {}
-newUserForm = document.getElementById('newUserForm')
-
-newUserForm.innerHTML = ''
-newUserForm.insertAdjacentHTML('beforeend', '<%= j render 'users/form', user: @user %>')
+<%= render 'errors_ajax', modal_form: 'create' %>
+var newUserForm = document.getElementById('newUserForm')
+newUserForm.innerHTML = '<%= j render 'users/form', user: @user %>'

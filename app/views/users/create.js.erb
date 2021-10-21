@@ -1,18 +1,9 @@
-var errorsSection = {}
-errorsSection = document.querySelector('.errors-section')
-
-if(errorsSection) { errorsSection.innerHTML = '' }
+<%= render 'errors_ajax', modal_form: 'create' %>
 
 <% if @user.errors.any? %>
-  errorsSection.insertAdjacentHTML('beforeend', "<%= j render 'shared/errors', user: @user %>")
+  errorsSection.innerHTML = "<%= j render 'shared/errors', user: @user %>"
 <% else %>
   document.getElementById('table-body').insertAdjacentHTML('afterbegin', "<%= j render 'table_row', user: @user, index: @index %>")
-
-  // create new pagination (TODO remake with JS)
-  var pagySection = {}
-  pagySection = document.querySelector('.pagination-link')
-  pagySection.innerHTML = "<%== j render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} %>"
-
-  // close Modal
+  document.querySelector('.pagination-link').innerHTML = "<%== j render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} %>"
   document.querySelector('.close-create').click()
 <% end %>

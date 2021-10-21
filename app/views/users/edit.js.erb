@@ -1,5 +1,3 @@
-var editUserForm = {}
-editUserForm = document.getElementById('editUserForm')
-
-editUserForm.innerHTML = ''
-editUserForm.insertAdjacentHTML('beforeend', '<%= j render 'users/form', user: @user %>')
+<%= render 'errors_ajax', modal_form: 'update' %>
+var editUserForm = document.getElementById('editUserForm')
+editUserForm.innerHTML = '<%= j render 'users/form', user: @user %>'
