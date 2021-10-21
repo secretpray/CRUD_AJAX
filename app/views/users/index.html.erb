@@ -24,16 +24,13 @@
       </thead>
 
       <tbody id='table-body'>
-        <% @users.each.with_index(1) do |user, index| %>
-          <%= render 'table_row', user: user, index: index %>
-        <% end %>
+        <%= render 'table', users: @users %>
       </tbody>
     </table>
   </div>
 
   <div class='d-flex justify-content-center pagination-link'>
-    <%== render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} %>
-    <%#== pagy_bootstrap_nav(@pagy).html_safe %>
+    <%== render partial: 'pagy/bootstrap_nav', locals: { pagy: @pagy } %>
   </div>
 </div>
 
