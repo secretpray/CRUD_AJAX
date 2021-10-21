@@ -1,9 +1,2 @@
-var tableListSection = {}
-tableListSection = document.querySelector('#table-body')
-
-tableListSection.innerHTML = "<%== j render 'table', users: @users %>"
-
-// create new pagination (TODO remake with JS)
-var pagySection = {}
-pagySection = document.querySelector('.pagination-link')
-pagySection.innerHTML = "<%== j render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} %>"
+document.querySelector('#table-body').innerHTML = "<%== j render 'table', users: @users %>"
+document.querySelector('.pagination-link').innerHTML = "<%== j render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} %>"

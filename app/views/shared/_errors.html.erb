@@ -1,5 +1,5 @@
-<% if user.errors.any? %>
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
+<% if user && user.errors.any? %>
+<div class="alert alert-warning px-3 alert-dismissible fade rounded-3 show" role="alert">
   <strong><%= pluralize(user.errors.count, "error") %> </strong> prohibited this user from being saved:
   <ul>
     <% user.errors.each do |error| %>

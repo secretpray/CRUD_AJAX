@@ -10,7 +10,7 @@
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownActions">
       <li>
-        <%= link_to 'Show', user, class: "dropdown-item" %>
+        <%= link_to 'Show', user, class: "dropdown-item", data: { bs_toggle: "modal", bs_target: "#showUserModal", remote: true } %>
       </li>
       <li>
         <%= link_to 'Edit', edit_user_path(user), class: "dropdown-item", data: { bs_toggle: 'modal', bs_target: '#editUserModal', remote: true } %>
