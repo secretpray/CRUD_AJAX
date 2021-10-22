@@ -2,7 +2,12 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
 
   def index
-    @pagy, @users = pagy(User.recent, items: 10, link_extra: 'data-remote="true"')
+    unless params[:query].blank?
+      users = User.search(params[:query]) # User.search(params[:query].to_s.downcase)
+    else
+      users =  User.recent
+    end
+    @pagy, @users = pagy(users, items: 10, link_extra: 'data-remote="true"')
   end
 
   def show; end

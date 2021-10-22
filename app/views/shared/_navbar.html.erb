@@ -29,10 +29,10 @@
           </ul>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <%= form_tag(users_path, method: :get, class: 'd-flex', remote: true) do %>
+        <%= search_field_tag 'query', nil, class: 'form-control me-2', placeholder: 'Search', aria: { label: 'Search' } %>
+        <%= submit_tag 'Search', class: "btn btn-outline-success", id: 'search-submit' %>
+      <% end %>
     </div>
   </div>
 </nav>
