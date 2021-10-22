@@ -1,2 +1,2 @@
 document.querySelector('#table-body').innerHTML = "<%== j render 'table', users: @users %>"
-document.querySelector('.pagination-link').innerHTML = "<%== j render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} %>"
+<%= render 'pagy_ajax' %>

@@ -1,4 +1,4 @@
 document.querySelector('#table-body').innerHTML = "<%== j render 'table', users: @users %>"
-document.querySelector('.pagination-link').innerHTML = "<%== j render partial: 'pagy/bootstrap_nav', locals: { pagy: @pagy } %>"
+<%= render 'pagy_ajax' %>
 // fix issue pagy gem with create link after AJAX delete records
 document.querySelectorAll('.page-link').forEach((link) => { link.href = link.href.replace(/\/<%= @user.id %>/gi, '') } )

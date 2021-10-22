@@ -4,6 +4,6 @@
   errorsSection.innerHTML = "<%= j render 'shared/errors', user: @user %>"
 <% else %>
   document.getElementById('table-body').insertAdjacentHTML('afterbegin', "<%= j render 'table_row', user: @user, index: @index %>")
-  document.querySelector('.pagination-link').innerHTML = "<%== j render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} %>"
+  <%= render 'pagy_ajax' %>
   document.querySelector('.close-create').click()
 <% end %>
