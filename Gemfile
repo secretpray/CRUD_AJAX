@@ -10,6 +10,7 @@ ruby '3.0.2'
 # gem 'image_processing', '~> 1.2'
 # gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'jbuilder', '~> 2.7'
 gem 'pagy'
 gem 'pg', '~> 1.1'
@@ -21,7 +22,6 @@ gem 'webpacker', '~> 5.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
   gem 'pry', '~> 0.13.1'
   gem 'pry-byebug'
 end
