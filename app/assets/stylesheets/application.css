@@ -21,3 +21,25 @@
   background: #198754 !important;
   color: white !important;
 }
+
+/* Animation table row */
+.fadein {
+  overflow: hidden;
+  opacity: 1;
+  animation: fade ease-in 0.3s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
