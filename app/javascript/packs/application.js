@@ -9,7 +9,7 @@ import * as ActiveStorage from '@rails/activestorage'
 import 'channels'
 
 require('utilities/popover')
-require('utilities/reset_search')
+require('utilities/service_search')
 
 Rails.start()
 Turbolinks.start()
