@@ -11,7 +11,6 @@ document.addEventListener("turbolinks:load", function(event) {
     document.getElementById('search-submit').click()
   }
 
-  document.getElementById('search-submit').disabled = true
   if (document.querySelector("#query")) {
     document.querySelector("#query").addEventListener('keyup', (event) => {
       // filter input
