@@ -1,0 +1,23 @@
+namespace :storage do
+  task reupload: :environment do
+    [User, Event].each do |clazz|
+      collection = clazz.with_attached_avatar
+
+      puts "#{clazz} has #{collection.count} avatar"
+
+      collection.find_each do |user|
+        next unless user.avatar.blob
+        user
+          .avatar
+          .blob
+          .open do |f|
+            user.avatar.attach(io: f, filename: user.avatar.blob.filename)
+          end
+
+        print "."
+      end
+
+      puts
+    end
+  end
+end

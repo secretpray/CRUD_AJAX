@@ -7,6 +7,7 @@ ruby '3.0.2'
 # Use Redis adapter to run Action Cable in production
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'redis', '~> 4.0'
+gem "aws-sdk-s3", require: false
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'faraday'

@@ -1,7 +1,8 @@
 module UsersHelper
   def link_to_avatar(user)
     if user.avatar.attached?
-      polymorphic_url(user.avatar)
+      user.avatar.url
+      # polymorphic_url(user.avatar)
       # Rails.application.routes.url_helpers.polymorphic_url(user.avatar)
     else
       gravatar_image_url(user.email, size: 100)
