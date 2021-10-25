@@ -43,3 +43,49 @@
     transform: scale(1);
   }
 }
+
+/* custom file input */
+.file_input_label {
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  color: #198754;
+  /* color: rgb(124, 58, 237); */
+  border-color: rgb(229, 231, 235);
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+              rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 130px;
+  letter-spacing: 0.4px;
+  line-height: 24px;
+  padding: 24px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  transition-duration: 0.15s;
+  transition-property: all;
+  transition-timing-function: linear;
+  width: 256px !important;
+}
+
+.file_input_label:hover {
+  background-color: #198754;
+  /* background-color: rgb(124, 58, 237); */
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+              rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  color: rgb(255, 255, 255);
+}
+
+.span-select-file {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}

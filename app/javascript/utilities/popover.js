@@ -1,6 +1,9 @@
 import * as bootstrap from 'bootstrap'
 import "../stylesheets/application"
 
+global.bootstrap = require("bootstrap")
+
+
 document.addEventListener("turbolinks:load", function(event) {
   var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
   var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {

@@ -10,7 +10,10 @@ import 'channels'
 
 require('utilities/popover')
 require('utilities/service_search')
+require('utilities/infinite_scroll')
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+window.Rails = Rails

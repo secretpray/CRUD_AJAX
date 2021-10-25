@@ -1,10 +1,41 @@
-<tr id=<%= dom_id(user) %> class='fadein'>
-  <td><%= user.id %></td>
-  <td><%= user.name %></td>
-  <td><%= user.email %></td>
-  <td><%= user.address %></td>
-  <td><%= user.contact %></td>
-  <td class='px-4 align-middle'>
+<tr id=<%= dom_id(user) %> class='fadein posttion-relative'>
+  <td class='py-1 px-4 align-middle' data-bs-toggle='tooltip' data-bs-placement='right' data-bs-html='true'
+      title="<div class='row' id='tooltip-green'>
+                <div class='tooltip-image col-sm-4 d-flex align-items-center'>
+                  <img src='<%= link_to_avatar(user) %>' class='tooltip-avatar'>
+                </div>
+                <div class='tooltip-main col-sm-8'>
+                  <div class='tooltip-title ms-1 mt-2'>
+                    <span class='text-white'><%= user.name %></span>
+                  </div>
+                  <hr class='my-1' style='border: solid 1px white;' />
+                  <div class='tooltip-team'>
+                    <span class='ms-1 fw-light'>Team: </span>
+                    <span class='ms-1 fw-lighter fst-italic'>Andromeda</span>
+                  </div>
+                  <div class='bio'>
+                    <div class='sex'>
+                      <span class='ms-1 fw-light'>Sex: </span>
+                      <span class='ms-1 fw-lighter fst-italic'><%= %w[Male Female].sample %></span>
+                    </div>
+                    <div class='old'>
+                      <span class='fw-light'>Year: </span>
+                      <span class='me-5 fw-lighter fst-italic'><%= rand(18..60) %></span>
+                    </div>
+                  </div>
+                  <div class='tooltip-email'>
+                    <span class='ms-1 fw-light'>email: </span>
+                    <span class='ms-1 fw-lighter fst-italic w-auto'><%= user.email %></span>
+                  </div>
+                </div>
+              </div>">
+      <%= image_tag user_avatar(user, 60), class: "rounded-3" %>
+  </td>
+  <td class='py-1 align-middle'><%= user.name %></td>
+  <td class='py-1 align-middle'><%= user.email %></td>
+  <td class='py-1 align-middle'><%= user.address %></td>
+  <td class='py-1 align-middle'><%= user.contact %></td>
+  <td class='py-2 align-middle px-2 align-middle'>
     <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownActions" data-bs-toggle="dropdown" aria-expanded="false">
       &nbsp;Select
     </button>
