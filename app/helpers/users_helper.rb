@@ -9,4 +9,8 @@ module UsersHelper
       # polymorphic_url('Unknowns_user_avatar.png')
     end
   end
+
+  def parsing_sex(user)
+    user.sex == 2 ? 'female' : 'male'
+  end
 end

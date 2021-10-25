@@ -16,11 +16,11 @@
                   <div class='bio'>
                     <div class='sex'>
                       <span class='ms-1 fw-light'>Sex: </span>
-                      <span class='ms-1 fw-lighter fst-italic'><%= %w[Male Female].sample %></span>
+                      <span class='ms-1 fw-lighter fst-italic'><%= parsing_sex(user) %></span>
                     </div>
                     <div class='old'>
                       <span class='fw-light'>Year: </span>
-                      <span class='me-5 fw-lighter fst-italic'><%= rand(18..60) %></span>
+                      <span class='me-5 fw-lighter fst-italic'><%= user.age %></span>
                     </div>
                   </div>
                   <div class='tooltip-email'>

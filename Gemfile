@@ -9,6 +9,7 @@ ruby '3.0.2'
 # gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'faraday'
 gem 'gravatar_image_tag', github: 'secretpray/gravatar_image_tag', branch: 'master'
 gem 'image_processing', '~> 1.2'
 gem 'jbuilder', '~> 2.7'

@@ -6,4 +6,6 @@
   document.getElementById('table-body').insertAdjacentHTML('afterbegin', "<%= j render 'table_row', user: @user, index: @index %>")
   <%= render 'pagy_ajax' %>
   document.querySelector('.close-create').click()
+  // rerender tooltip
+  <%= render 'tooltis_ajax' %>
 <% end %>
