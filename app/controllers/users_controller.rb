@@ -8,6 +8,12 @@ class UsersController < ApplicationController
       users =  User.recent
     end
     @pagy, @users = pagy(users, items: 10, link_extra: 'data-remote="true"')
+
+    respond_to do |format|
+      format.html
+      format.js
+      format.json { render json: { entries: render_to_string(partial: 'table', locals: { users: @users }, formats: [:html]), pagination: view_context.pagy_bootstrap_nav(@pagy)}}
+    end
   end
 
   def show; end
@@ -41,6 +47,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :email, :address, :contact)
+      params.require(:user).permit(:name, :email, :address, :contact, :avatar)
     end
 end

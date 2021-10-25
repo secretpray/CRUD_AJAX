@@ -1,10 +1,13 @@
 class User < ApplicationRecord
+  has_many :team_users, dependent: :destroy, inverse_of: :user
+  has_many :teams, through: :team_users
+  has_one_attached :avatar
+
   validates :name, presence: true
   validates :email, :address, presence: true, uniqueness: {case_sensitive: false}
 
   scope :recent, -> { User.order(created_at: :desc) }
-  # scope :search, ->(query) { where('LOWER(name) LIKE ? OR LOWER(email) LIKE ?', "%#{query}%", "%#{query}%") } # vanila SQL
-  scope :search, ->(query) { where('name ILIKE ? OR email ILIKE ?', "%#{query}%", "%#{query}%").order(created_at: :desc) } # ILIKE  -> postgreSQL
+  scope :search, ->(query) { where('name ILIKE ? OR email ILIKE ?', "%#{query}%", "%#{query}%").order(created_at: :desc) } # ILIKE  only in postgreSQL
 
   # def self.parse_filter_params(params)
   #   case

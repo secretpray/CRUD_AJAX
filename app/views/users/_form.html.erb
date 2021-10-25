@@ -2,6 +2,22 @@
   <%= form_with(model: user, local: false, html: { novalidate: true }) do |form| %>
     <div class="modal-body">
 
+      <% unless user.new_record? %>
+        <div class="mb-3 col-sm-10 mx-auto">
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-sm-4 d-flex justify-content-center">
+              <%= image_tag user_avatar(user, 100), class: "rounded-circle" %>
+            </div>
+
+            <label class="file_input_label">
+              <%= image_tag ('Cloud_upload.png') %>
+              <span class="span-select-file">Select a file</span>
+              <%= form.file_field :avatar, class: 'hidden'%>
+            </label>
+          </div>
+        </div>
+      <% end %>
+
       <div class="mb-2">
         <%= form.label :name, class: "form-label" %>
         <%= form.text_field :name, required: true, class: "form-control" %>
@@ -27,5 +43,5 @@
       <%= form.submit class: 'btn btn-success'  %>
       <%= link_to 'Close', users_path, class: 'btn btn-outline-secondary', data: { bs_dismiss: "modal" } %>
     </div>
-    <% end %>
+  <% end %>
 </div>

@@ -4,13 +4,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.2'
 
 # Use Active Model has_secure_password
-# Use Active Storage variant
 # Use Redis adapter to run Action Cable in production
 # gem 'bcrypt', '~> 3.1.7'
-# gem 'image_processing', '~> 1.2'
 # gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'gravatar_image_tag', github: 'secretpray/gravatar_image_tag', branch: 'master'
+gem 'image_processing', '~> 1.2'
 gem 'jbuilder', '~> 2.7'
 gem 'pagy'
 gem 'pg', '~> 1.1'
