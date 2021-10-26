@@ -33,7 +33,10 @@
     </table>
   </div>
   <div id="loader" class="image-loader show mt-2">
-    <%= image_tag ('loader.gif')%>
+    <%= image_tag ('loading-bars.svg'), style: 'width: 30px; height: 35px'%>
+    <p class='text-center text-secondary mt-1' id='timer' style='font-size: 10px;'>
+      <span id="seconds"></span>.<span id="milliseconds"></span>
+    </p>
   </div>
 </div>
 

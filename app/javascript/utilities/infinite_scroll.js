@@ -1,5 +1,3 @@
-import { debounce } from './modules/debouncer';
-
 document.addEventListener("turbolinks:load", () => {
   let options = {
     root: null,
@@ -7,8 +5,6 @@ document.addEventListener("turbolinks:load", () => {
     threshold: 1.0
   };
   const observer = new IntersectionObserver(callback, options);
-  // simple autoscroll
-  // const observer = new IntersectionObserver(handleIntersect, options);
   const footer = document.querySelector("footer")
   const loader = document.getElementById("loader");
 
@@ -17,28 +13,22 @@ document.addEventListener("turbolinks:load", () => {
   }
 })
 
-// with debounce: const loadAfterDelay = debounce(() => getData(), 1500)
-
-// Very simple Autoscroll (without delay)
-// function handleIntersect(entries) {
-//   if (entries[0].intersectionRatio >= 0.75) {
-//     // loadAfterDelay
-//     getData()
-//   }
-// }
-
-// Auutoscroll only after delay
-const intersections = new Map();
-
+const intersections = new Map(); // Auutoscroll only after delay 
 const intersectionChanged = (entry) => {
-  if (entry.isIntersecting) {
+  if (entry.isIntersecting && document.querySelector("a[rel='next']")) {
     loader.classList.add("show");
+    mOld = new Date().getTime();
+    running = true
+    count = 2500
+    draw();
     intersections.set(entry.target, setInterval(() => {
       loader.classList.remove("show");
+      running = false
       getData()
     }, 2500));
   } else if (!entry.isIntersecting && intersections.get(entry.target) != null) {
     loader.classList.remove("show");
+    running = false
     // console.log('Infinity scroll disabled');
     clearInterval(intersections.get(entry.target));
   }
@@ -81,4 +71,25 @@ function getData() {
   }
 
   loadNewPage()
+}
+
+// timer
+var count = 2500, // 2.5 sec
+    running = true,
+    mOld,
+    mNew;
+
+function draw() {
+  if (count > 0 && running) {
+    requestAnimationFrame(draw);
+    mNew = new Date().getTime();
+    count = count - mNew + mOld;
+    count = count >= 0 ? count : 0;
+    mOld = mNew;
+    document.getElementById("seconds").innerHTML = Math.floor(count / 1000);
+    document.getElementById("milliseconds").innerHTML = count % 1000;
+  } else {
+    document.getElementById("seconds").innerHTML = 0
+     document.getElementById("milliseconds").innerHTML = 0
+  }
 }
