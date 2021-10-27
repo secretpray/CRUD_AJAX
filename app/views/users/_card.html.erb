@@ -1,5 +1,14 @@
-<tr id=<%= dom_id(user) %> class='fadein posttion-relative'>
-  <td class='py-1 px-4 align-middle' data-bs-toggle='tooltip' data-bs-placement='right' data-bs-html='true'
+<div class="image-section">
+  <img src=<%= link_to_avatar(user) %> class='card-img-top'>
+</div>
+<div class="inner-body position-relative">
+  <div class="card-body" style='height: 10rem;'>
+    <h5 class="card-title"><%= user.name %></h5>
+    <p class="card-text"><%= user.address %>></p>
+  </div>
+
+  <div class="card-footer-button position-absolute" style='bottom: 1rem; right: 1rem;'>
+    <div class="pin position-absolute" style='bottom: 1rem; left: -12rem;' data-bs-toggle='tooltip' data-bs-placement='right' data-bs-html='true'
       title="<div class='row' id='tooltip-green'>
                 <div class='tooltip-image col-sm-4 d-flex align-items-center'>
                   <img src='<%= link_to_avatar(user) %>' class='tooltip-avatar'>
@@ -29,26 +38,22 @@
                   </div>
                 </div>
               </div>">
-      <%= image_tag user_avatar(user, 60), class: "rounded-3" %>
-  </td>
-  <td class='py-1 align-middle'><%= user.name %></td>
-  <td class='py-1 align-middle'><%= user.email %></td>
-  <td class='py-1 align-middle'><%= user.address %></td>
-  <td class='py-1 align-middle'><%= user.contact %></td>
-  <td class='py-2 align-middle px-2 align-middle'>
-    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownActions" data-bs-toggle="dropdown" aria-expanded="false">
-      &nbsp;Select
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownActions">
-      <li>
-        <%= link_to 'Show', user, class: "dropdown-item", data: { bs_toggle: "modal", bs_target: "#showUserModal", remote: true } %>
-      </li>
-      <li>
-        <%= link_to 'Edit', edit_user_path(user), class: "dropdown-item", data: { bs_toggle: 'modal', bs_target: '#editUserModal', remote: true } %>
-      </li>
-      <li>
-        <%= link_to 'Destroy', user, class: "dropdown-item", method: :delete, data: { confirm: 'Are you sure?', remote: true } %>
-      </li>
-    </ul>
-  </td>
-</tr>
+    </div>
+    <div class="link">
+      <button class="btn btn-outline-secondary mt-auto dropdown-toggle noshadow" type="button" id="dropdownActions" data-bs-toggle="dropdown" aria-expanded="false">
+        &nbsp;More info
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownActions">
+        <li>
+          <%= link_to 'Show', user, class: "dropdown-item", data: { bs_toggle: "modal", bs_target: "#showUserModal", remote: true } %>
+        </li>
+        <li>
+          <%= link_to 'Edit', edit_user_path(user), class: "dropdown-item", data: { bs_toggle: 'modal', bs_target: '#editUserModal', remote: true } %>
+        </li>
+        <li>
+          <%= link_to 'Destroy', user, class: "dropdown-item", method: :delete, data: { confirm: 'Are you sure?', remote: true } %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

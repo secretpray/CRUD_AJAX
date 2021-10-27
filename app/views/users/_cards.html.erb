@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mt-4 w-100 gap-4 d-flex flex-wrap justify-content-center">
+      <% users.each do |user| %>
+        <div class="card sliding" id=<%= dom_id(user) %> style='width: 22rem;'>
+          <%= render 'card', user: user %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

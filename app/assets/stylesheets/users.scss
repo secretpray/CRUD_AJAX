@@ -6,3 +6,34 @@
   background-color: red;
   display: table;
 }
+
+.card {
+  // max-height: 34rem;
+  // width: 22rem;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+              rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  box-sizing: border-box;
+}
+
+.noshadow {
+  -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.image-section {
+  overflow: hidden;
+  -webkit-box-shadow: 0px 11px 12px 1px rgba(19, 47, 44, 0.27);
+  -moz-box-shadow: 0px 11px 12px 1px rgba(19, 47, 44, 0.27);
+  box-shadow: 0px 11px 12px 1px rgba(19, 47, 44, 0.27);
+}
+
+.image-section img {
+  transition: all 1.2s ease;
+}
+
+.image-section:hover img {
+  transform: scale(1.5)
+}

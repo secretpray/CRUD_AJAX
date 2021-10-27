@@ -3,7 +3,7 @@
 <% if @user.errors.any? %>
   errorsSection.innerHTML = "<%= j render 'shared/errors', user: @user %>"
 <% else %>
-  document.getElementById('table-body').insertAdjacentHTML('afterbegin', "<%= j render 'table_row', user: @user, index: @index %>")
+  document.getElementById('table-body').insertAdjacentHTML('afterbegin', "<%= j render 'card', user: @user %>")
   <%= render 'pagy_ajax' %>
   document.querySelector('.close-create').click()
   // rerender tooltip
