@@ -2,17 +2,14 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
 
   def index
-    unless params[:query].blank?
-      users = User.search(params[:query]) # User.search(params[:query].to_s.downcase)
-    else
-      users =  User.recent
-    end
-    @pagy, @users = pagy(users, items: 10, link_extra: 'data-remote="true"')
+    users = params[:query].blank? ? User.recent : User.search(params[:query])
+    
+    @pagy, @users = pagy(users, items: 9, link_extra: 'data-remote="true"')
 
     respond_to do |format|
       format.html
       format.js
-      format.json { render json: { entries: render_to_string(partial: 'table', locals: { users: @users }, formats: [:html]), pagination: view_context.pagy_bootstrap_nav(@pagy)}}
+      format.json { render json: { entries: render_to_string(partial: 'cards', locals: { users: @users }, formats: [:html]), pagination: view_context.pagy_bootstrap_nav(@pagy)}}
     end
   end
 
@@ -27,7 +24,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      @pagy, @users = pagy(User.recent, items: 10, link_extra: 'data-remote="true"')
+      paginate_list
+      # @pagy, @users = pagy(User.recent, items: 9, link_extra: 'data-remote="true"')
     end
   end
 
@@ -37,7 +35,8 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    @pagy, @users = pagy(User.recent, items: 10, link_extra: 'data-remote="true"')
+    paginate_list
+    # @pagy, @users = pagy(User.recent, items: 9, link_extra: 'data-remote="true"')
   end
 
   private
@@ -48,5 +47,9 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :address, :contact, :avatar)
+    end
+
+    def paginate_list
+      @pagy, @users = pagy(User.recent, items: 9, link_extra: 'data-remote="true"')
     end
 end

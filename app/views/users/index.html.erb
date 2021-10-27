@@ -1,36 +1,13 @@
-<div class="container mt-4 mb-5">
+<div class="container mt-2 mb-5">
   <div class="row">
     <p id="notice"><%= notice %></p>
-    <!-- <div class="col-md-2 mx-auto position-relative"><%= render 'tooltip_user' %></div> -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
-      <div class="title">
-        <h1>Users</h1>
-      </div>
-      <div class='d-flex justify-content-center pagination-link mt-3'>
-        <%== render partial: 'pagy/bootstrap_nav', locals: { pagy: @pagy } if @pagy.pages > 1 %>
-      </div>
-      <div class="show-modal">
-        <%= link_to 'New User', new_user_path, class: 'btn btn-outline-success',
-            data: { bs_toggle: 'modal',  bs_target: '#newUserModal', remote: true } %>
-      </div>
+    <div class='d-flex justify-content-center pagination-link mt-3 mb-1'>
+      <%== render partial: 'pagy/bootstrap_nav', locals: { pagy: @pagy } if @pagy.pages > 1 %>
     </div>
 
-    <table class='table'>
-      <thead class='table-success'>
-        <tr>
-          <th>#</th>
-          <th >Name</th>
-          <th>Email</th>
-          <th>Address</th>
-          <th>Contact</th>
-          <th class='text-center' >Actions</th>
-        </tr>
-      </thead>
-
-      <tbody id='table-body' class='infinity-scroll-target mb-5'>
-        <%= render 'table', users: @users %>
-      </tbody>
-    </table>
+    <div id='table-body' class='infinity-scroll-target mb-5'>
+      <%= render 'cards', users: @users %>
+    </div>
   </div>
   <div id="loader" class="image-loader show mt-2">
     <%= image_tag ('loading-bars.svg'), style: 'width: 30px; height: 35px'%>
@@ -39,7 +16,6 @@
     </p>
   </div>
 </div>
-
 
 <!-- User create modal (title only, body and button in _form) -->
 <div class="modal fade" id="newUserModal" tabindex="-1" aria-labelledby="newUserModalLabel" aria-hidden="true">

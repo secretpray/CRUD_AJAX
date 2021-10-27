@@ -1,4 +1,4 @@
-document.querySelector('#table-body').innerHTML = "<%== j render 'table', users: @users %>"
+document.querySelector('#table-body').innerHTML = "<%= j render 'cards', users: @users %>"
 <%= render 'pagy_ajax' %>
 // rerender tooltip
 <%= render 'tooltis_ajax' %>

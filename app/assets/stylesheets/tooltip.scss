@@ -48,44 +48,40 @@
   display: flex;
   justify-content: space-between!important;
 }
-// @media screen and (min-width: 576px) {
-//   .col-sm-4 {
-//     flex: 0 0 auto;
-//     width: 33.33333333%;
-//   }
-// }
-//
-// @media screen and (max-width: 576px) {
-//   .tooltip-main {
-//     flex: 0 0 auto;
-//     width: 66.66666667%;
-//   }
-// }
 
 .tooltip-image {
 }
 
-// .large-tooltip .tooltip-inner {
-//     max-width: 300px;
-// }
-// @media screen and (max-width: 300px) {
-//   .large-tooltip .tooltip-inner {
-//     max-width: 100%;
-//   }
-// }
+.pin {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 80%;
+  height: 1rem;
+  width: 1rem;
+  background-color: #E0EDE7;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.pin:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #E0EDE7;
+  border-radius: 50%;
+  animation: puls-effect 1s ease infinite;
+}
 
-// div.tooltip-inner {
-//     text-align: center;
-//     -webkit-border-radius: 0px;
-//     -moz-border-radius: 0px;
-//     border-radius: 0px;
-//     margin-bottom: 6px;
-//     background-color: #505050;
-//     font-size: 14px;
-// }
-
-// @media (min-width: 576px)
-// .tooltip-main {
-//     flex: 0 0 auto;
-//     width: 66.66666667%;
-// }
+@keyframes puls-effect {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}

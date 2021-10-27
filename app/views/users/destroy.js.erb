@@ -1,4 +1,6 @@
-document.querySelector('#table-body').innerHTML = "<%== j render 'table', users: @users %>"
+document.querySelector('#table-body').innerHTML = "<%== j render 'cards', users: @users %>"
 <%= render 'pagy_ajax' %>
 // fix issue pagy gem with create link after AJAX delete records
 document.querySelectorAll('.page-link').forEach((link) => { link.href = link.href.replace(/\/<%= @user.id %>/gi, '') } )
+// rerender tooltip
+<%= render 'tooltis_ajax' %>
