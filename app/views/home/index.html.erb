@@ -5,3 +5,51 @@
         <%= link_to 'Tell Me More', users_path, class: 'btn btn-primary btn-xl text-uppercase', style: 'background-color: #FFC800; padding: 15px 30px;' %>
     </div>
 </header>
+<div class="container-fluid p-0 m-0">
+  <div id="carouselIndicators" class="carousel slide carousel-fade mt-5" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src=<%= image_url('1.jpg') %> class="d-block w-100" alt="first image" style='filter: brightness(0.4); opacity: 0.95;'>
+        <div class="carousel-caption d-none d-md-block mb-5">
+          <div class="masthead-heading text-uppercase">AJAX technology</div>
+          <div class="masthead-subheading">AJAX technology allows you to speed up the process of loading resources.</div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src=<%= image_url('2.jpg') %> class="d-block w-100" alt="second image" style='filter: brightness(0.4); opacity: 0.95;'>
+        <div class="carousel-caption d-none d-md-block mb-5">
+          <div class="masthead-heading text-uppercase">Infinite scrolling</div>
+          <div class="masthead-subheading">After a pause, a new page can be automatically added.</div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src=<%= image_url('3.jpg') %> class="d-block w-100" alt="third image" style='filter: brightness(0.4); opacity: 0.95;'>
+        <div class="carousel-caption d-none d-md-block mb-5">
+          <div class="masthead-heading text-uppercase">Live search</div>
+          <div class="masthead-subheading">Found entries are immediately displayed on the page without reloading it.</div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src=<%= image_url('header-bg.jpg') %> class="d-block w-100" alt="third image" style='filter: brightness(1.3);'>
+        <div class="carousel-caption d-none d-md-block mb-5">
+          <div class="masthead-heading text-uppercase">User data preview</div>
+          <div class="masthead-subheading">Hovering over a pin displays additional information in the tooltip window.</div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
