@@ -53,3 +53,82 @@
     </button>
   </div>
 </div>
+
+<!-- accordion section -->
+<div class="section-accordion mt-5">
+  <div class="wrapper w-100 h-100">
+    <div class="image__wrapper">
+      <div class="image__wrapper_inner">
+        <img src=<%= image_url('Questions.svg') %> alt="Question FAQ">
+      </div>
+      <img class="box" src=<%= image_url('illustration-box-desktop.svg') %> alt="illustration FAQ">
+    </div>
+    <div class="accordion__wrapper">
+      <h1 class="title__accordion">FAQ</h1>
+      <div class="questions__accordions">
+        <!-- Faq block start -->
+        <div class="question-answer__accordion">
+          <div class="question">
+            <h3 class="title__question">
+                How many team members can I invite?
+            </h3>
+            <img src=<%= image_url('icon-arrow-down.svg')%> class='arrow-down'>
+          </div>
+          <div class="answer">
+              You can invite up to 2 additional users on the Free plan. There is no limit on
+              team members for the Premium plan.
+          </div>
+        </div>
+        <!-- Faq block start -->
+        <div class="question-answer__accordion">
+          <div class="question">
+            <h3 class="title__question">
+                What is the maximum file upload size?
+            </h3>
+            <img src=<%= image_url('icon-arrow-down.svg') %> class='arrow-down'>
+          </div>
+          <div class="answer">
+              No more than 2GB. All files in your account must fit your allotted storage space.
+          </div>
+        </div>
+        <!-- Faq block start -->
+        <div class="question-answer__accordion">
+          <div class="question">
+            <h3 class="title__question">
+                How do I reset my password?
+            </h3>
+            <img src=<%= image_url('icon-arrow-down.svg') %> class='arrow-down' >
+          </div>
+          <div class="answer">
+              Click “Forgot password” from the login page or “Change password” from your profile page.
+              A reset link will be emailed to you.
+          </div>
+        </div>
+        <!-- Faq block start -->
+        <div class="question-answer__accordion">
+          <div class="question">
+            <h3 class="title__question">
+                Can I cancel my subscription?
+            </h3>
+            <img src=<%= image_url('icon-arrow-down.svg') %> class='arrow-down'>
+          </div>
+          <div class="answer">
+              Yes! Send us a message and we’ll process your request no questions asked.
+          </div>
+        </div>
+        <!-- Faq block start -->
+        <div class="question-answer__accordion">
+          <div class="question">
+            <h3 class="title__question">
+                Do you provide additional support?
+            </h3>
+            <img src=<%= image_url('icon-arrow-down.svg') %> class='arrow-down'>
+          </div>
+          <div class="answer">
+              Chat and email support is available 24/7. Phone lines are open during normal business hours.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,6 +11,7 @@ import 'channels'
 require('utilities/popover')
 require('utilities/service_search')
 require('utilities/infinite_scroll')
+require('utilities/accordion')
 
 Rails.start()
 Turbolinks.start()
