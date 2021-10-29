@@ -1,7 +1,7 @@
 <div class="mainpage">
   <!-- Jumbotron -->
   <section id="s1" name="page1">
-    <header class="masthead" style='min-height: 100vh'>
+    <header class="masthead min-vh-100">
       <div class="container">
         <div class="masthead-subheading">Welcome To Our Project!</div>
         <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
@@ -11,7 +11,7 @@
   </section>
   <!-- Carousel -->
   <section id="s2" name="page2">
-    <div class="container-fluid p-0 m-0">
+    <div class="container-fluid p-0 m-0 min-vh-100">
       <div id="carouselIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -138,6 +138,97 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+  <!-- Footer and sibscribe -->
+  <section id="s4" name="page4">
+    <div class='section-subcribe bg-light min-vh-100'>
+      <div class="container">
+        <div class="row justify-content-center align-itmes-center mb-5">
+          <div class="col-md-12 mb-4">
+            <h2 class='masthead-heading text-uppercase text-center' style='font-size: 3.5rem; color: darkslategrey;'>
+              Get news &amp; updates
+            </h2>
+          </div>
+
+          <div class="col-md-12 mt-3">
+            <form action="" method="post">
+              <div class="row">
+                <div class="col-md-4 mb-4">
+                  <input type="text" class='form-control' id='form-control-subscribe' placeholder='You name here'>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                  <input type="email" class='form-control' id='form-control-subscribe' placeholder='You email here' value="">
+                </div>
+
+                <div class="col-md-4 mb-4">
+                  <input type="submit" class='btn btn-secondary w-100' id='btn-secondary-subscribe' placeholder='You email here' value="Subscribe">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer class='site-footer'>
+        <div class="container">
+          <!-- main block -->
+          <div class="row mb-5">
+            <!-- block footer -->
+            <div class="col-md-3 mb-5">
+              <h2>About us</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt utveniam.
+              </p>
+              <p><a class='text-decoration-none' href="javascript: void(0)">Click here to learn more</a></p>
+            </div>
+            <!-- block footer -->
+            <div class="col-md-3 mb-5">
+              <h2>Contact &amp; Address</h2>
+              <ul class='list-unstyled footer-link'>
+                <li class='d-flex'>
+                  <span class='me-3'>Address:</span><span class='text-white'>28 Avenu name, City name here, Country name here</span>
+                </li>
+                <li class='d-flex'>
+                  <span class='me-3'>Telephone:</span><span class='text-white'>+33 00 11 22 345</span>
+                </li>
+                <li class='d-flex'>
+                  <span class='me-3'>Email:</span><span class='text-white'>youremail@yourdomain.com</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-md-3 mb-5">
+              <h2>Quick links</h2>
+              <ul class='list-unstyled footer-link'>
+                <li><a href="javascript: void(0)" class='text-decoration-none'>About us</a></li>
+                <li><a href="javascript: void(0)" class='text-decoration-none'>Testimonials</a></li>
+                <li><a href="javascript: void(0)" class='text-decoration-none'>Our projects</a></li>
+                <li><a href="javascript: void(0)" class='text-decoration-none'>Blog articles</a></li>
+                <li><a href="javascript: void(0)" class='text-decoration-none'>Contact us</a></li>
+              </ul>
+            </div>
+
+            <div class="col-md-3">
+              <h2>Our social media</h2>
+              <ul class='list-unstyled footer-link d-flex footer-social'>
+                <li><a href="javascript: void(0)" class='text-decoration-none'><span class='fab fa-facebook'></span></a></li>
+                <li><a href="javascript: void(0)" class='text-decoration-none'><span class='fab fa-twitter'></span></a></li>
+                <li><a href="javascript: void(0)" class='text-decoration-none'><span class='fab fa-instagram'></span></a></li>
+                <li><a href="javascript: void(0)" class='text-decoration-none'><span class='fab fa-facebook'></span></a></li>
+                <li><a href="javascript: void(0)" class='text-decoration-none'><span class='fab fa-youtube'></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- author -->
+          <div class="row">
+            <div class="col-12 text-md-center text-left mb-3">
+              <p>This template is made with <i class="far fa-heart" aria-hidden="true"></i>&nbsp;Secretpray</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   </section>
 </div>
