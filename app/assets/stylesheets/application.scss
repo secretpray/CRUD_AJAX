@@ -14,8 +14,39 @@
  *= require_self
  */
 
+.main-body {
+  min-height: calc(100vh - 112px);
+  background: #cde0d9;
+}
+
+.navbar {
+  background: #e0ecde;
+}
+
+#query {
+  background: transparent;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  // height: 50px;
+}
+
+#query:focus {
+	-webkit-box-shadow: 0 3px 10px -2px rgba(0,0,0,0.2) !important;
+	box-shadow: 0 3px 10px -2px rgba(0,0,0,0.2) !important;
+}
+
+#query:focus, #query:active {
+	outline: none !important;
+}
+
 .page-link {
   color: #198754 !important;
+  background-color: rgb(224, 236, 222) !important;
+}
+
+.page-link:hover {
+  background-color: #cde0d9 !important;
 }
 
 .page-item.active .page-link {

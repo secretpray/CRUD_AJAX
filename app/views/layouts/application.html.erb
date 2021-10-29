@@ -15,7 +15,7 @@
     <% unless controller_name == 'home' && action_name == 'index' %>
       <%= render 'shared/navbar'%>
     <% end %>
-      <main style='min-height: calc(100vh - 112px)' >
+      <main class='main-body'>
         <%= yield %>
       </main>
     <% unless controller_name == 'home' && action_name == 'index' %>
