@@ -19,6 +19,13 @@ Slider, Accordion, cards
 
 https://user-images.githubusercontent.com/17977331/139223419-40ef5480-c323-4948-90b4-b89ca7e3b40f.mp4
 
+Small tunning (one page scroller, footer, green theme)
+
+
+https://user-images.githubusercontent.com/17977331/139524945-d71dbd18-1a95-402d-9de5-bf901919eff9.mp4
+
+
+
 
 PS 
 TODO: sortable (maybe in concern), filters for search/filters records (age - range select, sex - radio button, team - select + TomSelect, star rating - range with steps, geosearch). Later rewrite to React or Hotwire
