@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     users = params[:query].blank? ? User.recent : User.search(params[:query])
-    
+
     @pagy, @users = pagy(users, items: 9, link_extra: 'data-remote="true"')
 
     respond_to do |format|

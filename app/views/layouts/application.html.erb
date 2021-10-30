@@ -11,7 +11,10 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class='d-flex flex-column h-100'>
+  <body class='d-flex flex-column h-100'
+        data-controller-name=<%= controller_name %>
+        data-action-name=<%= action_name %>
+  >
     <% unless controller_name == 'home' && action_name == 'index' %>
       <%= render 'shared/navbar'%>
     <% end %>
