@@ -18,6 +18,7 @@ let init = () => {
     const css = new Blob([style], { type: 'text/css' });
     const link = document.createElement('link');
     link.setAttribute('rel', 'stylesheet');
+    link.setAttribute('id', 'onepagestyle');
     link.setAttribute('href', URL.createObjectURL(css));
     document.head.appendChild(link);
     init = () => {
