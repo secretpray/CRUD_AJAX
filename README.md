@@ -26,6 +26,14 @@ https://user-images.githubusercontent.com/17977331/139524945-d71dbd18-1a95-402d-
 
 
 
-
-PS 
-TODO: sortable (maybe in concern), filters for search/filters records (age - range select, sex - radio button, team - select + TomSelect, star rating - range with steps, geosearch). Later rewrite to React or Hotwire
+TODO: 
+- sortable (maybe in concern) and filters: 
+  - sort by ↑/↓ recent, max rating, max popular, nearest. Save filters in session or Redis DB
+  - filters by age (range select);
+  - filters by sex (radio button); 
+  - filters by category project (multi checkbox);
+  - filters by name project (autocomplete search with index, maybe with index in Redis DB)
+  - filters by team name (select + TomSelect)
+  - filters by star rating (range with steps 1..5)
+  - filters by last week/mounth created
+  - filters by geosearch. 
