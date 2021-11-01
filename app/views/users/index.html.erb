@@ -1,12 +1,172 @@
 <div class="container mt-2 mb-5">
   <div class="row">
     <p id="notice"><%= notice %></p>
-    <div class='d-flex justify-content-center pagination-link mt-3 mb-1'>
+    <div class='d-flex justify-content-center pagination-link ms-5 mt-3 mb-1'>
       <%== render partial: 'pagy/bootstrap_nav', locals: { pagy: @pagy } if @pagy.pages > 1 %>
     </div>
+    <aside class="col-md-3" style='max-width: 19rem'>
+      <div class="card">
+      	<article class="filter-group">
+      		<header class="card-header filter-header">
+      			<a href="#" data-bs-toggle="collapse" data-bs-target="#collapse_1" aria-expanded="true" class="text-decoration-none">
+      				<i class="icon-control fa fa-chevron-down"></i>
+      				<h6 class="title">Product type</h6>
+      			</a>
+      		</header>
+      		<div class="filter-content collapse show" id="collapse_1" style="">
+      			<div class="card-body">
+      				<form class="pb-3">
+      				<div class="input-group">
+      				  <input type="text" class="form-control" placeholder="Search">
+      				  <div class="input-group-append">
+      				    <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
+      				  </div>
+      				</div>
+      				</form>
 
-    <div id='table-body' class='infinity-scroll-target mb-5'>
-      <%= render 'cards', users: @users %>
+      				<ul class="list-menu">
+      				<li class='list-unstyled'><a href="#" class='text-decoration-none'>People  </a></li>
+      				<li class='list-unstyled'><a href="#" class='text-decoration-none'>Watches </a></li>
+      				<li class='list-unstyled'><a href="#" class='text-decoration-none'>Cinema  </a></li>
+      				<li class='list-unstyled'><a href="#" class='text-decoration-none'>Clothes  </a></li>
+      				<li class='list-unstyled'><a href="#" class='text-decoration-none'>Home items </a></li>
+      				<li class='list-unstyled'><a href="#" class='text-decoration-none'>Animals</a></li>
+      				<li class='list-unstyled'><a href="#" class='text-decoration-none'>People </a></li>
+      				</ul>
+
+      			</div> <!-- card-body.// -->
+      		</div>
+      	</article> <!-- filter-group  .// -->
+      	<article class="filter-group">
+      		<header class="card-header filter-header">
+      			<a href="#" data-bs-toggle="collapse" data-bs-target="#collapse_2" aria-expanded="true" class="text-decoration-none">
+      				<i class="icon-control fa fa-chevron-down"></i>
+      				<h6 class="title">Brands </h6>
+      			</a>
+      		</header>
+      		<div class="filter-content collapse show" id="collapse_2" style="">
+      			<div class="card-body">
+      				<label class="custom-control custom-checkbox">
+      				  <input type="checkbox" checked="" class="custom-control-input">
+      				  <div class="custom-control-label">Mercedes
+      				  	<b class="badge rounded-pill bg-secondary float-right opacity-75">120</b>  </div>
+      				</label>
+      				<label class="custom-control custom-checkbox">
+      				  <input type="checkbox" checked="" class="custom-control-input">
+      				  <div class="custom-control-label">Toyota
+      				  	<b class="badge rounded-pill bg-secondary float-right opacity-75">15</b>  </div>
+      				</label>
+      				<label class="custom-control custom-checkbox">
+      				  <input type="checkbox" checked="" class="custom-control-input">
+      				  <div class="custom-control-label">Mitsubishi
+      				  	<b class="badge rounded-pill bg-secondary float-right opacity-75">35</b> </div>
+      				</label>
+      				<label class="custom-control custom-checkbox">
+      				  <input type="checkbox" checked="" class="custom-control-input">
+      				  <div class="custom-control-label">Nissan
+      				  	<b class="badge rounded-pill bg-secondary float-right opacity-75">89</b> </div>
+      				</label>
+      				<label class="custom-control custom-checkbox">
+      				  <input type="checkbox" class="custom-control-input">
+      				  <div class="custom-control-label">Honda
+      				  	<b class="badge rounded-pill bg-secondary float-right opacity-75">30</b>  </div>
+      				</label>
+      	</div> <!-- card-body.// -->
+      		</div>
+      	</article> <!-- filter-group .// -->
+      	<article class="filter-group">
+      		<header class="card-header filter-header">
+      			<a href="#" data-bs-toggle="collapse" data-bs-target="#collapse_3" aria-expanded="true" class="text-decoration-none">
+      				<i class="icon-control fa fa-chevron-down"></i>
+      				<h6 class="title">Price range </h6>
+      			</a>
+      		</header>
+      		<div class="filter-content collapse show" id="collapse_3" style="">
+      			<div class="card-body">
+      				<input type="range" class="custom-range" min="0" max="100" name="">
+      				<div class="form-row">
+      				<div class="form-group col-md-6">
+      				  <label>Min</label>
+      				  <input class="form-control" placeholder="$0" type="number">
+      				</div>
+      				<div class="form-group text-right col-md-6">
+      				  <label>Max</label>
+      				  <input class="form-control" placeholder="$1,0000" type="number">
+      				</div>
+      				</div> <!-- form-row.// -->
+      				<button class="btn btn-block btn-outline-secondary mt-2">Apply</button>
+      			</div><!-- card-body.// -->
+      		</div>
+      	</article> <!-- filter-group .// -->
+      	<article class="filter-group">
+      		<header class="card-header filter-header">
+      			<a href="#" data-bs-toggle="collapse" data-bs-target="#collapse_4" aria-expanded="true" class="text-decoration-none">
+      				<i class="icon-control fa fa-chevron-down"></i>
+      				<h6 class="title">Sizes </h6>
+      			</a>
+      		</header>
+      		<div class="filter-content collapse show" id="collapse_4" style="">
+      			<div class="card-body">
+      			  <label class="checkbox-btn">
+      			    <input type="checkbox">
+      			    <span class="btn btn-light"> XS </span>
+      			  </label>
+
+      			  <label class="checkbox-btn">
+      			    <input type="checkbox">
+      			    <span class="btn btn-light"> SM </span>
+      			  </label>
+
+      			  <label class="checkbox-btn">
+      			    <input type="checkbox">
+      			    <span class="btn btn-light"> LG </span>
+      			  </label>
+
+      			  <label class="checkbox-btn">
+      			    <input type="checkbox">
+      			    <span class="btn btn-light"> XXL </span>
+      			  </label>
+      		</div><!-- card-body.// -->
+      		</div>
+      	</article> <!-- filter-group .// -->
+      	<article class="filter-group">
+      		<header class="card-header filter-header">
+      			<a href="#" data-bs-toggle="collapse" data-bs-target="#collapse_5" aria-expanded="false" class="text-decoration-none">
+      				<i class="icon-control fa fa-chevron-down"></i>
+      				<h6 class="title">More filter </h6>
+      			</a>
+      		</header>
+      		<div class="filter-content collapse in" id="collapse_5" style="">
+      			<div class="card-body">
+      				<label class="custom-control custom-radio">
+      				  <input type="radio" name="myfilter_radio" checked="" class="custom-control-input">
+      				  <div class="custom-control-label">Any condition</div>
+      				</label>
+
+      				<label class="custom-control custom-radio">
+      				  <input type="radio" name="myfilter_radio" class="custom-control-input">
+      				  <div class="custom-control-label">Brand new </div>
+      				</label>
+
+      				<label class="custom-control custom-radio">
+      				  <input type="radio" name="myfilter_radio" class="custom-control-input">
+      				  <div class="custom-control-label">Used items</div>
+      				</label>
+
+      				<label class="custom-control custom-radio">
+      				  <input type="radio" name="myfilter_radio" class="custom-control-input">
+      				  <div class="custom-control-label">Very old</div>
+      				</label>
+      			</div><!-- card-body.// -->
+      		</div>
+      	</article> <!-- filter-group .// -->
+      </div> <!-- card.// -->
+    </aside>
+
+    <div class="col-md-9 style='max-width: 56rem'">
+      <div id='table-body' class='infinity-scroll-target mb-5'>
+        <%= render 'cards', users: @users %>
+      </div>
     </div>
   </div>
   <div id="loader" class="image-loader show mt-2">
@@ -17,51 +177,5 @@
   </div>
 </div>
 
-<!-- User create modal (title only, body and button in _form) -->
-<div class="modal fade" id="newUserModal" tabindex="-1" aria-labelledby="newUserModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="newUserModalLabel">Add user</h5>
-        <button type="button" class="btn-close close-create" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="errors-create-section p-2">
-        <%= render 'shared/errors', user: @user %>
-      </div>
-      <div id="newUserForm">
-        <!-- insert by JS body and button form -->
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- User create modal (title only, body and button in _form) -->
-<div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editUserModalLabel">Edit user</h5>
-        <button type="button" class="btn-close close-edit" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="errors-update-section p-2">
-        <%= render 'shared/errors', user: @user %>
-      </div>
-      <div id="editUserForm">
-        <!-- insert by JS body and button form -->
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="showUserModal" tabindex="-1" aria-labelledby="showUserModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="showUserModalLabel">User Details</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div id="showUserDetails">
-      </div>
-    </div>
-  </div>
-</div>
+<%= render 'modal_new_user_form', user: @user %>
+<%= render 'modal_show_user_details' %>

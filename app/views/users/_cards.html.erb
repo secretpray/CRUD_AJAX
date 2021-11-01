@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4 mt-4 w-100 gap-4 d-flex flex-wrap justify-content-center">
+    <%= render 'sort_result_search_list' %>
+    <div class="col-md-4 mt-3 w-100 gap-4 d-flex flex-wrap justify-content-center">
       <% users.each do |user| %>
-        <div class="card sliding" id=<%= dom_id(user) %> style='width: 22rem;'>
+        <div class="card sliding" id=<%= dom_id(user) %> style='width: 290px;'>
           <%= render 'card', user: user %>
         </div>
       <% end %>

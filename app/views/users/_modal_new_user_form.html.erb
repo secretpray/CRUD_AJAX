@@ -1,0 +1,17 @@
+<!-- User create modal (title only, body and button in _form) -->
+<div class="modal fade" id="newUserModal" tabindex="-1" aria-labelledby="newUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newUserModalLabel">Add user</h5>
+        <button type="button" class="btn-close close-create" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="errors-create-section p-2">
+        <%= render 'shared/errors', user: user %>
+      </div>
+      <div id="newUserForm">
+        <!-- insert by JS body and button form -->
+      </div>
+    </div>
+  </div>
+</div>
