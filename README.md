@@ -24,6 +24,11 @@ Small tunning (one page scroller, footer, green theme)
 
 https://user-images.githubusercontent.com/17977331/139524945-d71dbd18-1a95-402d-9de5-bf901919eff9.mp4
 
+Preview bootstrap template
+
+
+https://user-images.githubusercontent.com/17977331/139630809-46b31cde-49e7-400d-8672-5be0fdb5e8ba.mp4
+
 
 
 TODO: 
